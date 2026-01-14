@@ -1,5 +1,5 @@
 // --- PASTE YOUR WEBHOOK URL HERE ---
-const DISCORD_WEBHOOK_URL = 'YOUR_DISCORD_WEBHOOK_URL_HERE'; 
+const DISCORD_WEBHOOK_URL = 'https://discordapp.com/api/webhooks/1460279813418913792/rKIJjmyMcSl_JYePIASlzAPUdq2mFwk2NLkfioP4bsVua6ImduN1Ojmfw15ZYFqe93Ne'; 
 // -----------------------------------
 
 let selectedHex = '#FF0055'; // Default
@@ -58,14 +58,14 @@ async function postNote() {
 
     // 2. PAYLOAD: Prepare data for Discord
     const payload = {
-        username: "TambayLand Bot",
+        username: "TambayLand Support",
         avatar_url: "https://github.com/rotygtps-cyber/shadow-wall/blob/main/logotambay.png?raw=true",
         embeds: [{
             color: discordColor,
             author: { name: `${emoji}  ${tag.toUpperCase()}` },
             description: `### "${content}"`,
             footer: {
-                text: "Sent via TambayLand Web",
+                text: "Sent via TambayLand Confession Wall",
                 icon_url: "https://cdn-icons-png.flaticon.com/512/1077/1077035.png"
             },
             timestamp: new Date().toISOString()
@@ -154,4 +154,5 @@ function loadHistory() {
 
 function escapeHtml(text) {
     return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+
 }
