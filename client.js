@@ -58,14 +58,14 @@ async function postNote() {
 
     // 2. PAYLOAD: Prepare data for Discord
     const payload = {
-        username: "TambayLand Bot",
+        username: "TambayLand Support",
         avatar_url: "https://github.com/rotygtps-cyber/shadow-wall/blob/main/logotambay.png?raw=true",
         embeds: [{
             color: discordColor,
             author: { name: `${emoji}  ${tag.toUpperCase()}` },
             description: `### "${content}"`,
             footer: {
-                text: "Sent via TambayLand Web",
+                text: "Sent via TambayLand Confession Wall",
                 icon_url: "https://cdn-icons-png.flaticon.com/512/1077/1077035.png"
             },
             timestamp: new Date().toISOString()
@@ -156,3 +156,4 @@ function escapeHtml(text) {
     return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
 
 }
+
