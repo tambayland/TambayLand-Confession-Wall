@@ -1,5 +1,5 @@
 // --- PASTE YOUR WEBHOOK URL HERE ---
-const DISCORD_WEBHOOK_URL = 'YOUR_DISCORD_WEBHOOK_URL_HERE'; 
+const DISCORD_WEBHOOK_URL = 'https://discordapp.com/api/webhooks/1460279813418913792/rKIJjmyMcSl_JYePIASlzAPUdq2mFwk2NLkfioP4bsVua6ImduN1Ojmfw15ZYFqe93Ne'; 
 // -----------------------------------
 
 let selectedHex = '#FF0055'; // Default
@@ -154,4 +154,5 @@ function loadHistory() {
 
 function escapeHtml(text) {
     return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+
 }
