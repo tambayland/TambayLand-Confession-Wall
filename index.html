@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TambayLand | Confession Wall</title>
+    <link rel="icon" type="image/png" href="favicon.ico"> 
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-moon"></i> TambayLand <span class="highlight">Wall</span>
+            </div>
+            <div class="server-status">
+                <span class="dot"></span> System Ready
+            </div>
+        </header>
+
+        <section class="composer">
+            <div class="composer-card">
+                <h2><i class="fa-solid fa-bullhorn"></i> Make a Confession</h2>
+                <textarea id="noteInput" placeholder="Anong chika mo today? (What's your story?)..." maxlength="300"></textarea>
+                
+                <div class="composer-tools">
+                    <div class="tool-group">
+                        <label>Vibe Color:</label>
+                        <div class="color-options">
+                            <div class="color-btn active" data-hex="#FF0055" style="background: #FF0055;" title="Neon Pink"></div> 
+                            <div class="color-btn" data-hex="#00C9FF" style="background: #00C9FF;" title="Cyber Blue"></div> 
+                            <div class="color-btn" data-hex="#FDBB2D" style="background: #FDBB2D;" title="Sunset Gold"></div> 
+                            <div class="color-btn" data-hex="#182848" style="background: #182848;" title="Midnight"></div>
+                            
+                            <div class="color-btn" data-hex="#9D50BB" style="background: #9D50BB;" title="Royal Purple"></div>
+                            <div class="color-btn" data-hex="#00F260" style="background: #00F260;" title="Toxic Green"></div>
+                            <div class="color-btn" data-hex="#FF512F" style="background: #FF512F;" title="Intense Orange"></div>
+                        </div>
+                    </div>
+
+                    <div class="tool-group">
+                        <select id="tagInput">
+                            <option value="Chika">Chika / Gossip</option>
+                            <option value="Confession">Confession</option>
+                            <option value="Love Letter">Love Letter</option>
+                            <option value="Rant">Rant</option>
+                            <option value="Meme">Meme</option>
+                            <option value="Shoutout">Shoutout</option>
+                            <option value="Secret">Deep Secret</option>
+                            <option value="Advice">Need Advice</option>
+                        </select>
+                    </div>
+
+                    <button id="postBtn" onclick="postNote()">
+                        Post to Discord <i class="fa-brands fa-discord"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section class="feed">
+            <div class="feed-header">
+                <h3><i class="fa-solid fa-clock-rotate-left"></i> Sent from you</h3>
+                <small style="color: #666;">(Visible only to you)</small>
+            </div>
+            <div id="notesGrid" class="notes-grid">
+                </div>
+        </section>
+
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html>
