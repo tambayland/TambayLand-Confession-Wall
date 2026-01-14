@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TambayLand | Profile Builder</title>
+	<link rel="icon" type="image/png" href="favicon.ico"> 
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="background-anim"></div>
+
+    <div class="main-container">
+        <header>
+            <div class="logo-area">
+                <img src="https://github.com/rotygtps-cyber/shadow-wall/blob/main/logotambay.png?raw=true" alt="Logo" class="logo">
+                <h1>TambayLand <span class="highlight">Profile</span></h1>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+        </header>
+
+        <div class="warning-box">
+            <i class="fa-solid fa-user-secret"></i>
+            <span><strong>Stay Lowkey?</strong> If you wish to remain hidden or lowkey, please DO NOT fill out sensitive fields. All fields below are 100% optional. Only share what you are comfortable with.</span>
+        </div>
+
+        <form id="profileForm">
+            
+            <div class="step active" id="step1">
+                <h2>👋 The Basics</h2>
+                <p class="subtitle">Let's start with who you are.</p>
+                
+                <div class="input-group">
+                    <label>📛 Nickname / IGN</label>
+                    <input type="text" name="nickname" placeholder="What do we call you?">
+                </div>
+                <div class="input-group">
+                    <label>👤 Real Name (Optional)</label>
+                    <input type="text" name="realname" placeholder="Only if you want...">
+                </div>
+                <div class="row">
+                    <div class="input-group half">
+                        <label>🎂 Age</label>
+                        <input type="number" name="age" placeholder="18">
+                    </div>
+                    <div class="input-group half">
+                        <label>⚧ Gender / Identity</label>
+                        <select name="gender">
+                            <option value="">Select...</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Non-Binary">Non-Binary</option>
+                            <option value="Gay">Gay</option>
+                            <option value="Lesbian">Lesbian</option>
+                            <option value="Transgender">Transgender</option>
+                            <option value="Others">Others</option>
+                            <option value="Secret">Secret</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="nav-btns">
+                    <button type="button" class="btn next-btn" onclick="nextStep(2)">Next <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="step" id="step2">
+                <h2>✨ The Vibe</h2>
+                <p class="subtitle">What makes you tick?</p>
+
+                <div class="row">
+                    <div class="input-group half">
+                        <label>📅 Birthday</label>
+                        <input type="date" name="birthday">
+                    </div>
+                    <div class="input-group half">
+                        <label>🔮 Zodiac Sign</label>
+                        <select name="zodiac">
+                            <option value="">Select...</option>
+                            <option value="♈ Aries">♈ Aries</option>
+                            <option value="♉ Taurus">♉ Taurus</option>
+                            <option value="♊ Gemini">♊ Gemini</option>
+                            <option value="♋ Cancer">♋ Cancer</option>
+                            <option value="♌ Leo">♌ Leo</option>
+                            <option value="♍ Virgo">♍ Virgo</option>
+                            <option value="♎ Libra">♎ Libra</option>
+                            <option value="♏ Scorpio">♏ Scorpio</option>
+                            <option value="♐ Sagittarius">♐ Sagittarius</option>
+                            <option value="♑ Capricorn">♑ Capricorn</option>
+                            <option value="♒ Aquarius">♒ Aquarius</option>
+                            <option value="♓ Pisces">♓ Pisces</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>🧠 MBTI / Personality</label>
+                    <input type="text" name="mbti" placeholder="e.g. INFP, ENTJ...">
+                </div>
+
+                <div class="input-group">
+                    <label>🎓 Course / Occupation</label>
+                    <input type="text" name="course" placeholder="Student, Artist, Engineer...">
+                </div>
+
+                <div class="nav-btns">
+                    <button type="button" class="btn back-btn" onclick="nextStep(1)">Back</button>
+                    <button type="button" class="btn next-btn" onclick="nextStep(3)">Next <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="step" id="step3">
+                <h2>🎮 Gamer Profile</h2>
+                <p class="subtitle">How do you play?</p>
+
+                <div class="input-group">
+                    <label>🕹️ Main Device</label>
+                    <select name="device">
+                        <option value="">Select...</option>
+                        <option value="PC Master Race">PC</option>
+                        <option value="Mobile / Tablet">Mobile / Tablet</option>
+                        <option value="Console (PS/Xbox)">Console</option>
+                        <option value="Samsung Smart Fridge">Samsung Smart Fridge</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>🎙️ Voice Chat?</label>
+                    <select name="mic">
+                        <option value="">Select...</option>
+                        <option value="Always On">Always On</option>
+                        <option value="Only if needed">Only if needed</option>
+                        <option value="Typing Only (Shy)">Typing Only (Shy)</option>
+                        <option value="Mute Gaming">Mute Gaming</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>⏰ Active Hours</label>
+                    <input type="text" name="active_hours" placeholder="e.g. 8PM - 3AM, Weekends only...">
+                </div>
+
+                <div class="nav-btns">
+                    <button type="button" class="btn back-btn" onclick="nextStep(2)">Back</button>
+                    <button type="button" class="btn next-btn" onclick="nextStep(4)">Next <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="step" id="step4">
+                <h2>🌶️ Spill the Tea</h2>
+                <p class="subtitle">Almost done!</p>
+
+                <div class="input-group">
+                    <label>❤️ Relationship Status</label>
+                    <select name="status">
+                        <option value="">Select...</option>
+                        <option value="Single">Single</option>
+                        <option value="Taken">Taken</option>
+                        <option value="Complicated">It's Complicated</option>
+                        <option value="Waiting for Miracle">Waiting for Miracle</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>🚩 Your Red Flag?</label>
+                    <input type="text" name="redflag" placeholder="e.g. I ghost people...">
+                </div>
+
+                <div class="input-group">
+                    <label>🎵 Life Anthem</label>
+                    <input type="text" name="anthem" placeholder="Song currently on repeat...">
+                </div>
+
+                <div class="input-group">
+                    <label>💬 Motto in Life</label>
+                    <textarea name="motto" rows="2" placeholder="Your favorite quote..."></textarea>
+                </div>
+
+                <div class="nav-btns">
+                    <button type="button" class="btn back-btn" onclick="nextStep(3)">Back</button>
+                    <button type="button" class="btn next-btn" onclick="nextStep(5)">Next <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="step" id="step5">
+                <h2>📸 Final Touch</h2>
+                <p class="subtitle">Show us your avatar (or face)!</p>
+
+                <div class="file-upload-wrapper">
+                    <input type="file" id="photoInput" accept="image/*" onchange="previewImage()">
+                    <div class="upload-box">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <p>Click to Upload</p>
+                    </div>
+                </div>
+                
+                <div id="imagePreviewContainer" style="display:none; text-align:center; margin-top:15px;">
+                    <img id="imagePreview" src="" alt="Preview" style="max-width: 150px; border-radius: 10px; border: 2px solid var(--accent);">
+                </div>
+
+                <div class="nav-btns">
+                    <button type="button" class="btn back-btn" onclick="nextStep(4)">Back</button>
+                    <button type="submit" class="btn submit-btn" id="submitBtn">Send to Server 🚀</button>
+                </div>
+                <p class="status-msg" id="statusMsg"></p>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

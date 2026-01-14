@@ -1,0 +1,144 @@
+:root {
+    --bg-dark: #0f1014;
+    --card-bg: rgba(30, 31, 34, 0.85); /* Semi-transparent */
+    --accent: #00ff88; /* Cyberpunk Green */
+    --accent-glow: rgba(0, 255, 136, 0.4);
+    --text-main: #ffffff;
+    --text-muted: #aeb4c0;
+    --input-bg: #2b2d31;
+    --danger: #ff4757;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    background: radial-gradient(circle at top left, #1a2a3a, #0f1014);
+}
+
+/* Background Animation Blob */
+.background-anim {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(45deg, #00ff88, #00b8ff);
+    filter: blur(150px);
+    opacity: 0.15;
+    z-index: -1;
+    animation: moveBlob 10s infinite alternate;
+}
+
+@keyframes moveBlob {
+    0% { transform: translate(-20%, -20%); }
+    100% { transform: translate(20%, 20%); }
+}
+
+.main-container {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px); /* Glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header */
+header { text-align: center; margin-bottom: 20px; }
+.logo-area { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 15px; }
+.logo { width: 40px; height: 40px; border-radius: 50%; }
+h1 { font-size: 1.5rem; font-weight: 700; }
+.highlight { color: var(--accent); }
+
+/* Progress Bar */
+.progress-bar { width: 100%; height: 6px; background: #333; border-radius: 3px; overflow: hidden; }
+.progress { width: 25%; height: 100%; background: var(--accent); transition: width 0.4s ease; box-shadow: 0 0 10px var(--accent-glow); }
+
+/* Warning Box */
+.warning-box {
+    background: rgba(255, 200, 0, 0.1);
+    border-left: 3px solid #ffcc00;
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.warning-box i { color: #ffcc00; }
+
+/* Form Steps */
+.step { display: none; animation: fadeIn 0.5s ease; }
+.step.active { display: block; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 { font-size: 1.4rem; margin-bottom: 5px; }
+.subtitle { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+
+/* Inputs */
+.input-group { margin-bottom: 15px; }
+.row { display: flex; gap: 10px; }
+.half { flex: 1; }
+
+label { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 5px; font-weight: 600; }
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    background: var(--input-bg);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: white;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: #36393f;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
+}
+
+/* File Upload */
+.file-upload-wrapper { position: relative; width: 100%; height: 80px; border: 2px dashed #444; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.3s; }
+.file-upload-wrapper:hover { border-color: var(--accent); background: rgba(0, 255, 136, 0.05); }
+.file-upload-wrapper input { position: absolute; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.upload-box { text-align: center; color: var(--text-muted); pointer-events: none; }
+
+/* Buttons */
+.nav-btns { display: flex; justify-content: space-between; margin-top: 25px; }
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.next-btn, .submit-btn { background: var(--accent); color: #000; }
+.next-btn:hover, .submit-btn:hover { background: #00e67a; transform: translateY(-2px); box-shadow: 0 5px 15px var(--accent-glow); }
+.back-btn { background: transparent; color: var(--text-muted); border: 1px solid #444; }
+.back-btn:hover { background: #333; color: white; }
+
+/* Status */
+.status-msg { text-align: center; margin-top: 15px; font-size: 0.9rem; min-height: 20px; }
